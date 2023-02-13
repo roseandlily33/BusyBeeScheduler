@@ -14,7 +14,7 @@ $(document).ready(function(){
     for (i = 0; i < 9; i++){
         $('.time-block').each(function(){
             var blockHour = parseInt($(this).attr('id').split('-')[1]);
-            if(blockHour > currentHour){
+            if(blockHour < currentHour){
                 $(this).addClass('past');
             }
             else if (blockHour === currentHour){
@@ -32,6 +32,7 @@ $(document).ready(function(){
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
     $('.time-block').on('click', function(){
+        localStorage.setItem('')
   
     })
     function getElements(){
