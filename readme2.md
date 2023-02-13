@@ -12,6 +12,7 @@ Coming soon
 Coming soon
 
 ## Difficulties:
+-I wasn't sure if the HTML portion itself was meant to be dyanmically created so I asked BCS, and they said that I could do it like this.
 Coming soon
 
 ## What I learned:
