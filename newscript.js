@@ -5,7 +5,6 @@ $(document).ready(function(){
     var entry = $('textarea');
     var hour = $('.hour');
     
-  
   $(function () {
     //Time and Date Display with dayjs:
     var timeAndDate = dayjs().format('ddd MMM DD, YYYY  hh:mm:ss a');
@@ -26,11 +25,7 @@ $(document).ready(function(){
                 $(this).removeClass('past');
                 $(this).removeClass('present');
                 $(this).addClass('future');
-            }
-            getElements();
-        });
-            
-    };
+            } });};
 
     //When the save button is clicked it stores contents of entry in localStorage with the hour:
     $('.saveBtn').on('click', function(){
@@ -40,12 +35,16 @@ $(document).ready(function(){
         console.log(entry);
         localStorage.setItem(hour, entry);
   
-    })
-    //Returns the saved elements from localStorage:
-       function getElements(){
-       var savedEntries = localStorage.getItem(hour, entry);
-
-        }
-    
+    });
+    //This gets the items hour and entry from the local stroage:
+    $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+    $('#hour-10 .description').val(localStorage.getItem('hour-10'));
+    $('#hour-11 .description').val(localStorage.getItem('hour-11'));
+    $('#hour-12 .description').val(localStorage.getItem('hour-12'));
+    $('#hour-13 .description').val(localStorage.getItem('hour-13'));
+    $('#hour-14 .description').val(localStorage.getItem('hour-14'));
+    $('#hour-15 .description').val(localStorage.getItem('hour-15'));
+    $('#hour-16 .description').val(localStorage.getItem('hour-16'));
+    $('#hour-17 .description').val(localStorage.getItem('hour-17'));
   });
   });

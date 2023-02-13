@@ -34,17 +34,17 @@ body {
 }
 
 .past {
-  background-color: #729d6bcb;
+  background-color: #7ca177cb;
   color: white;
 }
 
 .present {
-  background-color: #d3397c;
+  background-color: #952a58db;
   color: white;
 }
 
 .future {
-  background-color: #0e601c;
+  background-color: #316f3a;
   color: white;
 }
 
@@ -61,5 +61,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .saveBtn:hover{
-  color: #cd9abe;
+  color: #952a58db;
+  ;
 }
