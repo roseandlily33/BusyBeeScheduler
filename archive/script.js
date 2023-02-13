@@ -2,10 +2,13 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(document).ready(function(){
+
+
+  let entries = [{time: 9,}, {time: 10}, {time:11}, {time: 12}, {time: 1}, {time: 2}, {time:3}, {time: 4}, {time: 5}];
+
   let currentHour = dayjs().hour();
   console.log(currentHour);
-  let time = currentHour;
-
+  
 $(function () {
   //Time and Date Display with dayjs:
   var timeAndDate = dayjs().format('ddd MMM DD, YYYY  hh:mm:ss a');
@@ -39,6 +42,23 @@ $(function () {
     } else {
       $('div').children().attr('class', 'present');
     }
+  }
+  function createTimeSlots(){
+    entries.forEach(entry => {
+      $('.container-fluid').append(
+        '<div id="hour-${entry.timeSlot}"
+        class="row time-block ${pastPresentFuture(entry.timeSlot)}">
+        <div class="col-2 col-md-1 hour text-center py-3">{</div>
+        <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>'
+      )
+
+    })
+
+    })
   }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
