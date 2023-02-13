@@ -2,7 +2,8 @@
 $(document).ready(function(){
     let currentHour = dayjs().hour();
     console.log(currentHour);
-    //var entry = $('textarea');
+    var entry = $('textarea');
+    var hour = $('.hour');
     
   
   $(function () {
@@ -26,7 +27,9 @@ $(document).ready(function(){
                 $(this).removeClass('present');
                 $(this).addClass('future');
             }
+            getElements();
         });
+            
     };
 
     //When the save button is clicked it stores contents of entry in localStorage with the hour:
@@ -35,16 +38,18 @@ $(document).ready(function(){
         console.log(hour);
         var entry = $(this).siblings('.description').val();
         console.log(entry);
-        localStorage.setItem(hour, entry);
+        localStorage.setItem(JSON.stringify(hour, entry));
   
     })
     //Returns the saved elements from localStorage:
-    function getElements(){
-      var savedEntries = JSON.parse(localStorage(entry, hour));
-      if(savedEntries !== null){
-        //.text = savedEntries; 
-      }
-    }
+       function getElements(){
+       var savedEntries = JSON.parse(localStorage.getItem(hour, entry));
+        if(savedEntries !== null){
+            $('textarea').text(savedEntries);
+        } else {
+            return;
+        }
+        }
     
   });
   });
