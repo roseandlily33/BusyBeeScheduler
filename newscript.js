@@ -34,21 +34,17 @@ $(document).ready(function(){
 
     //When the save button is clicked it stores contents of entry in localStorage with the hour:
     $('.saveBtn').on('click', function(){
-        var hour = $(this).parent().val();
+        var hour = $(this).parent().attr('id');
         console.log(hour);
         var entry = $(this).siblings('.description').val();
         console.log(entry);
-        localStorage.setItem(JSON.stringify(hour, entry));
+        localStorage.setItem(hour, entry);
   
     })
     //Returns the saved elements from localStorage:
        function getElements(){
-       var savedEntries = JSON.parse(localStorage.getItem(hour, entry));
-        if(savedEntries !== null){
-            $('textarea').text(savedEntries);
-        } else {
-            return;
-        }
+       var savedEntries = localStorage.getItem(hour, entry);
+
         }
     
   });
