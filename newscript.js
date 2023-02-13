@@ -31,16 +31,16 @@ $(document).ready(function(){
 
     //When the save button is clicked it stores contents of entry in localStorage with the hour:
     $('.saveBtn').on('click', function(){
+        var hour = $(this).parent().val();
+        console.log(hour);
         var entry = $(this).siblings('.description').val();
         console.log(entry);
-        var hour = $(this).children().children('.saveBtn').val();
-        console.log(hour);
-        localStorage.setItem(entry, hour);
+        localStorage.setItem(hour, entry);
   
     })
     //Returns the saved elements from localStorage:
     function getElements(){
-      var savedEntries = JSON.parse(localStorage(plannerEntries));
+      var savedEntries = JSON.parse(localStorage(entry, hour));
       if(savedEntries !== null){
         //.text = savedEntries; 
       }
